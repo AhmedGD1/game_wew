@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqfhxdmnfqxwb"]
+
+[ext_resource type="Texture2D" uid="uid://dck25mpfrmoyp" path="res://rtrtrt.png" id="1_atr8i"]
+[ext_resource type="Script" path="res://code/player.gd" id="1_fai3p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5ar1"]
+atlas = ExtResource("1_atr8i")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sops"]
+atlas = ExtResource("1_atr8i")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2qrr"]
+atlas = ExtResource("1_atr8i")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xree"]
+atlas = ExtResource("1_atr8i")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkpbs"]
+atlas = ExtResource("1_atr8i")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l8ut"]
+atlas = ExtResource("1_atr8i")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0v6n"]
+atlas = ExtResource("1_atr8i")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go4oc"]
+atlas = ExtResource("1_atr8i")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ftx5w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_atr8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5ar1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sops")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2qrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xree")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkpbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l8ut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0v6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go4oc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_fai3p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ftx5w")
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5.935, 5.935)
+
+[node name="Node2D" type="Node2D" parent="."]
+rotation = 1.62316

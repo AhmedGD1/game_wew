@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb2g4rle1vbms"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ii46x"]
+albedo_color = Color(0.513726, 1, 0.121569, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_36ka5"]
+material = SubResource("StandardMaterial3D_ii46x")
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7alb"]
+albedo_color = Color(1, 0.164706, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_53mtb"]
+material = SubResource("StandardMaterial3D_c7alb")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_36ka5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18967, 0)
+mesh = SubResource("BoxMesh_53mtb")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.738455, 0.219531, -0.637565, 0, 0.945519, 0.325568, 0.674302, -0.240418, 0.698223, -5.219, 4.501, 5.328)
