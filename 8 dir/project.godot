@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="8 dir"
-run/main_scene="res://world.tscn"
+run/main_scene="res://Scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -26,7 +26,7 @@ window/size/viewport_height=270
 window/size/window_width_override=1024
 window/size/window_height_override=600
 window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="res://Art/ddd.png"
+mouse_cursor/custom_image="res://Sprites/ddd.png"
 mouse_cursor/custom_image_hotspot=Vector2(5, 5)
 
 [editor_plugins]

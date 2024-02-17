@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://cqfhxdmnfqxwb"]
+[gd_scene load_steps=33 format=3 uid="uid://cqfhxdmnfqxwb"]
 
-[ext_resource type="Script" path="res://code/player.gd" id="1_fai3p"]
-[ext_resource type="Texture2D" uid="uid://pju88irc3dkk" path="res://Art/Player.png" id="2_pap1p"]
-[ext_resource type="Script" path="res://code/CameraPosition.gd" id="3_54or2"]
-[ext_resource type="Texture2D" uid="uid://chipwtrk6ock7" path="res://Art/Run.png" id="3_t3g3i"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_fai3p"]
+[ext_resource type="Texture2D" uid="uid://pju88irc3dkk" path="res://Sprites/Player.png" id="2_pap1p"]
+[ext_resource type="Script" path="res://Scripts/CameraPosition.gd" id="3_54or2"]
+[ext_resource type="Texture2D" uid="uid://chipwtrk6ock7" path="res://Sprites/Run.png" id="3_t3g3i"]
+[ext_resource type="Script" path="res://Scripts/MoveComponent.gd" id="5_qby8h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mt66h"]
 atlas = ExtResource("2_pap1p")
@@ -233,22 +234,35 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m7ugq"]
+radius = 2.0
+height = 6.0
+
 [node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_fai3p")
+
+[node name="MoveComponent" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_qby8h")
+speed = 70.0
+weight = 16.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_b8m1e")
-animation = &"run_up_side"
+animation = &"idle_down"
 autoplay = "idle_down"
 speed_scale = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_m7ugq")
 
 [node name="CameraPosition" type="Node2D" parent="."]
 rotation = 1.62316
 script = ExtResource("3_54or2")
 
-[node name="Camera2D" type="Camera2D" parent="CameraPosition"]
-zoom = Vector2(3.16, 3.16)
+[node name="MainCamera" type="Camera2D" parent="CameraPosition"]
+zoom = Vector2(2, 2)
