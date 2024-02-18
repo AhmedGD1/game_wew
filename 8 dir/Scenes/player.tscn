@@ -252,7 +252,7 @@ weight = 16.0
 unique_name_in_owner = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_b8m1e")
-animation = &"idle_down"
+animation = &"idle_up_side"
 autoplay = "idle_down"
 speed_scale = 1.5
 
